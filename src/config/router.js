@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-
+import navigate from '../components/footer/navigate.vue'
 Vue.use(Router);
 
 const routes = [
@@ -10,49 +10,55 @@ const routes = [
   },
   {
     name: 'home',
-    component: () => import('../page/index'),
+    components: {
+      default: () => import('../page/index'),
+      tabBar: navigate,
+    },
     meta: {
       title: '首页'
     }
   },
   {
-		path: '/login',
+    path: '/login',
     component: () => import('../page/account/login'),
     meta: {
       title: '登录'
     }
   },
   {
-		path: '/login/password',
+    path: '/login/password',
     component: () => import('../page/account/password'),
     meta: {
       title: '登录'
     }
   },
   {
-		path: '/login/phone',
+    path: '/login/phone',
     component: () => import('../page/account/phonelogin'),
     meta: {
       title: '手机号登录'
     }
   },
   {
-		path: '/login/register',
+    path: '/login/register',
     component: () => import('../page/account/register'),
     meta: {
       title: '注册'
     }
   },
   {
-		path: '/user/index',
-    component: () => import('../page/user/index'),
+    path: '/user/index',
+    components: {
+      default: () => import('../page/user/index'),
+      tabBar: navigate,
+    },
     name: 'user',
     meta: {
       title: '会员中心'
     }
   },
   {
-		path: '/user/info',
+    path: '/user/info',
     component: () => import('../page/user/info/detail'),
     name: 'user',
     meta: {
@@ -173,7 +179,10 @@ const routes = [
   },
   {
     name: 'category',
-    component: () => import('../page/category/index'),
+    components: {
+      default: () => import('../page/category/index'),
+      tabBar: navigate,
+    },
     meta: {
       title: '分类'
     }
@@ -185,7 +194,15 @@ routes.forEach(route => {
   route.path = route.path || '/' + (route.name || '');
 });
 
-const router = new Router({ routes });
+const router = new Router({
+  routes:routes, scrollBehavior:(to, from, savedPosition)=>{
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
+});
 
 router.beforeEach((to, from, next) => {
   const title = to.meta && to.meta.title;
