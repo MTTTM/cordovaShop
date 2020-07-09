@@ -21,6 +21,6 @@ yarn-error.log*
 *.sw*
 
 # Cordova
-/src-cordova/platforms
+/src-cordova/platforms/browser
 /src-cordova/plugins
 /public/cordova.js

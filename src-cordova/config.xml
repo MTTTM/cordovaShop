@@ -18,8 +18,19 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <preference name="AutoHideSplashScreen" value="false" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <splash src="res/screen/android/screen.png" density="port-hdpi"/>
+        <splash src="res/screen/android/screen.png" density="port-ldpi"/>
+        <splash src="res/screen/android/screen.png" density="port-mdpi"/>
+        <splash src="res/screen/android/screen.png" density="port-xhdpi"/>
+    <icon background="res/icon/android/ic_launcher_background.png" density="ldpi" foreground="res/icon/android/icon.png" />
+    <icon background="res/icon/android/ic_launcher_background.png" density="mdpi" foreground="res/icon/android/icon.png" />
+    <icon background="res/icon/android/ic_launcher_background.png" density="hdpi" foreground="res/icon/android/icon.png" />
+    <icon background="res/icon/android/ic_launcher_background.png" density="xhdpi" foreground="res/icon/android/icon.png" />
+    <icon background="res/icon/android/ic_launcher_background.png" density="xxhdpi" foreground="res/icon/android/icon.png" />
+    <icon background="res/icon/android/ic_launcher_background.png" density="xxxhdpi" foreground="res/icon/android/icon.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />

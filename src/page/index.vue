@@ -13,6 +13,11 @@ export default {
     components:{
         page,
         navigate
+    },
+    mounted(){
+        this.$nextTick(()=>{
+            this.$cordovaFn.splashscreenHide&&this.$cordovaFn.splashscreenHide();
+        })
     }
 }
 </script>
