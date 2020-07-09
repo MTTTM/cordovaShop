@@ -4,18 +4,17 @@ import navigate from '../components/footer/navigate.vue'
 Vue.use(Router);
 
 const routes = [
-  {
-    path: '*',
-    redirect: '/home'
-  },
+
   {
     name: 'home',
+    path: '/',
     components: {
       default: () => import('../page/index'),
       tabBar: navigate,
     },
     meta: {
-      title: '首页'
+      title: '首页',
+        keep: true
     }
   },
   {
@@ -54,7 +53,8 @@ const routes = [
     },
     name: 'user',
     meta: {
-      title: '会员中心'
+      title: '会员中心',
+      keep: true
     }
   },
   {
@@ -62,14 +62,17 @@ const routes = [
     component: () => import('../page/user/info/detail'),
     name: 'user',
     meta: {
-      title: '账号管理'
+      title: '账号管理',
+      keep: true
+      
     }
   },
   {
     path: '/user/address',
     component: () => import('../page/user/address/list'),
     meta: {
-      title: '我的地址'
+      title: '我的地址',
+        keep: true
     }
   },
   {
@@ -83,7 +86,10 @@ const routes = [
     path: '/user/favorite',
     component: () => import('../page/user/favorite/list'),
     meta: {
-      title: '我的收藏'
+      title: '我的收藏',
+      meta: {
+        keep: true
+      }
     }
   },
   {
@@ -160,14 +166,16 @@ const routes = [
     path: '/search',
     component: () => import('../page/product/list'),
     meta: {
-      title: '商品列表'
+      title: '商品列表',
+      keep: true
     }
   },
   {
     name: 'cart',
     component: () => import('../page/cart/index'),
     meta: {
-      title: '购物车'
+      title: '购物车',
+      keep: true
     }
   },
   {
@@ -184,9 +192,17 @@ const routes = [
       tabBar: navigate,
     },
     meta: {
-      title: '分类'
+      title: '分类',
+      keep: true
     }
   },
+  // {
+  //   path: '*',
+  //   redirect: '/home',
+  //   meta: {
+  //     keep: true
+  //   }
+  // },
 ];
 
 // add route path
@@ -195,7 +211,7 @@ routes.forEach(route => {
 });
 
 const router = new Router({
-  routes:routes, scrollBehavior:(to, from, savedPosition)=>{
+  routes: routes, scrollBehavior: (to, from, savedPosition) => {
     if (savedPosition) {
       return savedPosition
     } else {
