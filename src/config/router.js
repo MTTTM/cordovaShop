@@ -233,8 +233,10 @@ router.beforeEach((to, from, next) => {
     let statusBar=to.meta.statusBar?to.meta.statusBar:{};
     const {statusBarColor}=statusBar;
     //设置背景颜色
-    CORDOVACONFIG.setStatusStyle&&CORDOVACONFIG.setStatusStyle();//设置字体
+    StatusBar.overlaysWebView(true); // 是否覆盖webview,如果覆盖需要做相应的样式处理
     CORDOVACONFIG.backgroundColorByHexString&&CORDOVACONFIG.backgroundColorByHexString(statusBarColor)//设置背景
+    // CORDOVACONFIG.setStatusStyle&&CORDOVACONFIG.setStatusStyle();//设置字体
+    StatusBar.styleDefault();
   }catch(e){}
    
   
