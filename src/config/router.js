@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import navigate from '../components/footer/navigate.vue'
+import CORDOVACONFIG from "../forCordova/index"
 Vue.use(Router);
 
 const routes = [
@@ -54,7 +55,10 @@ const routes = [
     name: 'user',
     meta: {
       title: '会员中心',
-      keep: true
+      keep: true,
+      statusBar:{
+        statusBarColor:"#f1f5fa"
+      }
     }
   },
   {
@@ -225,6 +229,15 @@ router.beforeEach((to, from, next) => {
   if (title) {
     document.title = title;
   }
+  try{
+    let statusBar=to.meta.statusBar?to.meta.statusBar:{};
+    const {statusBarColor}=statusBar;
+    //设置背景颜色
+    CORDOVACONFIG.setStatusStyle&&CORDOVACONFIG.setStatusStyle();//设置字体
+    CORDOVACONFIG.backgroundColorByHexString&&CORDOVACONFIG.backgroundColorByHexString(statusBarColor)//设置背景
+  }catch(e){}
+   
+  
   next();
 });
 
