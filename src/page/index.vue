@@ -17,6 +17,13 @@ export default {
     mounted(){
         this.$nextTick(()=>{
             this.$cordovaFn.splashscreenHide&&this.$cordovaFn.splashscreenHide();
+             this.$cordovaFn.offlineEvent&&this.$cordovaFn.offlineEvent(()=>{
+                 alert("没网络了")
+                t
+            });
+             this.$cordovaFn.onlineEvent&&this.$cordovaFn.onlineEvent(()=>{
+              alert("网络连接成功")
+            });
         })
     }
 }
