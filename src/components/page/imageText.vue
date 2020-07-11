@@ -3,7 +3,15 @@
         <div v-if="data.type == '1'" v-for="(item,index)  in data.imagelist" :key="index" class="image-wrapper" :style="'width:'+ data.width+'%; margin-right: 0px;'">
             <a :href="item.link" class="cap-image-ad__link cap-image-ad__link--image-nav" :style="'color:'+data.color">
                 <div class="cap-image-ad__image">
-                    <img v-lazy="item.src+'?w=320'" style="width: 100%; " />
+                    <!-- <img v-lazy="item.src+'?w=320'" style="width: 100%; " /> -->
+                    <van-image
+                        width="100%"
+                        height="100%"
+                         fit="contain"
+                        lazy-load
+                        :src="item.src+'?w=320'"
+                    >
+                       </van-image>
                 </div>
                 <h3 v-if="item.title!=''" class="cap-image-ad__nav-title">{{item.title}}</h3>
             </a>

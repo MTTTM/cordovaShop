@@ -16,28 +16,6 @@ export default {
     components:{
         [Tabbar.name]: Tabbar,
         [TabbarItem.name]: TabbarItem,
-    },
-    data(){
-        return {
-            active:0
-        }
-    },
-    created(){
-       // this.asyncActive();
-    },
-    watch:{
-        "$route.name"(newV){
-           // this.asyncActive();
-        }
-    },
-    methods:{
-        asyncActive(){
-          let path=['home','category','cart','user']
-           let index= path.indexOf(this.$route.name);
-           if(index>-1){
-               this.active=index;
-           }
-        }
     }
 }
 </script>

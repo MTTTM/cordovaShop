@@ -59,19 +59,18 @@ function checkConnection() {
  }
 CORDOVAFN.emit=function(funStr,...args){
     if(funStr==='emit'){
-        console.warn("emit 不允许传参调用")
+        alert("emit 不允许调用自身")
     }
     let func=CORDOVAFN['_'+funStr];
-    //alert(func)
     try{
         if(func&&typeof func ==='function'){
             func(...args);
         }
-        else{
-            console.warn(`CORDOVAFN 不存在 ${funStr} 函数`)
+        else if('_cordovaNative' in window){
+           alert(`CORDOVAFN 不存在 ${funStr} 函数`)
         }
     }catch(e){
-       // alert(e);
+       alert(e);
     }
    
 }

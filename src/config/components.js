@@ -48,6 +48,7 @@ GoodsActionIcon,
    Info,
    Image as VanImage,
    Notify,
+   Loading
 } from 'vant';
 
 
@@ -79,7 +80,7 @@ GoodsActionIcon,
     headerNav, 
     Tab, Tabs,Toast,Row,Checkbox, CheckboxGroup, SubmitBar,NavBar ,Tabbar,
      TabbarItem,navigate,Panel,List ,Step, Steps,Field ,
-    Popup,productcard,Stepper,RadioGroup, Radio,Picker,Uploader,Info,Notify
+    Popup,productcard,Stepper,RadioGroup, Radio,Picker,Uploader,Info,Notify,Loading
 ]
 
 

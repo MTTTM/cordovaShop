@@ -7,7 +7,8 @@
         <li v-for="(item,index) in productlist" :key="index" :class="'cap-goods-list__wrapper  '+(data.ParameterDictionary.type=='3'?(index%3==0?'cap-goods-list__wrapper--hybrid-big ':'cap-goods-list__wrapper--hybrid-small '):'')">
             <router-link :class="'cap-goods-list__item cap-goods-list__item--'+data.classname+' '+data.ParameterDictionary.showtype+' '+data.aclass" :to="'/product/'+item.id">
                 <div class="cap-goods-list__photo">
-                    <img class="cap-goods-list__img lazy lazyload" v-lazy="item.imageURL+'?w='+((data.ParameterDictionary.type=='1'||data.ParameterDictionary.type=='3')?'750':'375')" />
+                    <img class="cap-goods-list__img lazy lazyload"
+                     v-lazy="item.imageURL+'?w='+((data.ParameterDictionary.type=='1'||data.ParameterDictionary.type=='3')?'750':'375')" />
                 </div>
                 <div :class="'cap-goods-list__info has-title has-price '+(data.ParameterDictionary.showtype == 'card'?'has-btn':'')">
                     <h3 class="title">{{item.title}}</h3>

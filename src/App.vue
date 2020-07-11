@@ -27,15 +27,15 @@ export default {
     $route(to, from) {
       const toDepth = to.path.split("/").length;
       const fromDepth = from.path.split("/").length;
-      console.log("to",to,from,toDepth)
+      console.log("to", to, from, toDepth);
       let path = ["home", "category", "cart", "user"];
-      let toIndex= path.indexOf(to.name);
-       let fromIndex = path.indexOf(from.name);
-      if ((toIndex > -1&&fromIndex>-1)||to.path==from.path) {
-        this.transitionName="";
+      let toIndex = path.indexOf(to.name);
+      let fromIndex = path.indexOf(from.name);
+      if ((toIndex > -1 && fromIndex > -1) || to.path == from.path) {
+        this.transitionName = "";
         return;
       }
-      
+
       this.transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
     }
   }
@@ -53,6 +53,7 @@ export default {
   top: 0;
   z-index: 10;
   width: 100vw;
+  transition-timing-function: linear
 }
 .slide-right-enter {
   opacity: 0;
@@ -69,6 +70,13 @@ export default {
 .slide-left-leave-active {
   opacity: 0;
   transform: translate3d(-100%, 0, 0);
+}
+
+.fade-in-active, .fade-out-active{
+    transition: all 1s linear 
+} 
+.fade-in-enter, .fade-out-active{
+     opacity: 0 
 }
 </style>
 

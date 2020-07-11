@@ -64,7 +64,7 @@ const routes = [
   {
     path: '/user/info',
     component: () => import('../page/user/info/detail'),
-    name: 'user',
+    name: 'userInfo',
     meta: {
       title: '账号管理',
       keep: true
