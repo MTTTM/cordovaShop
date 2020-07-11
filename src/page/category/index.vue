@@ -8,23 +8,23 @@
         >
         <div slot="action" @click="onSearch">搜索</div>
         </van-search>
-        <van-badge-group :active-key="activeKey" class="tab" :style="'height:'+fullHeight+'px'">
-            <van-badge title="热门推荐" @click="onClick" />
-            <van-badge title="手机数码" @click="onClick" />
-            <van-badge title="家用电器" @click="onClick" />
-            <van-badge title="电脑办公" @click="onClick" />
-            <van-badge title="美妆护肤" @click="onClick" />
-            <van-badge title="个护清洁" @click="onClick" />
-            <van-badge title="汽车用品" @click="onClick" />
-            <van-badge title="男装" @click="onClick" />
-            <van-badge title="男鞋" @click="onClick" />
-            <van-badge title="女装" @click="onClick" />
-            <van-badge title="女鞋" @click="onClick" />
-            <van-badge title="母婴童装" @click="onClick" />
-            <van-badge title="图书音像" @click="onClick" />
-            <van-badge title="运动户外" @click="onClick" />
-            <van-badge title="食品生鲜" @click="onClick" />
-        </van-badge-group>
+        <van-sidebar :active-key="activeKey" class="tab" :style="'height:'+fullHeight+'px'">
+            <van-sidebar-item  title="热门推荐" @click="onClick" />
+            <van-sidebar-item  title="手机数码" @click="onClick" />
+            <van-sidebar-item  title="家用电器" @click="onClick" />
+            <van-sidebar-item  title="电脑办公" @click="onClick" />
+            <van-sidebar-item  title="美妆护肤" @click="onClick" />
+            <van-sidebar-item  title="个护清洁" @click="onClick" />
+            <van-sidebar-item  title="汽车用品" @click="onClick" />
+            <van-sidebar-item  title="男装" @click="onClick" />
+            <van-sidebar-item  title="男鞋" @click="onClick" />
+            <van-sidebar-item  title="女装" @click="onClick" />
+            <van-sidebar-item  title="女鞋" @click="onClick" />
+            <van-sidebar-item  title="母婴童装" @click="onClick" />
+            <van-sidebar-item  title="图书音像" @click="onClick" />
+            <van-sidebar-item  title="运动户外" @click="onClick" />
+            <van-sidebar-item  title="食品生鲜" @click="onClick" />
+        </van-sidebar>
         <div class="content" :style="'width:'+fullWidth+'px;height:'+(fullHeight-7)+'px'" >
             <img src="https://img11.360buyimg.com/mcoss/jfs/t1/1072/23/3672/95463/5b9a0813E175891fa/e38fc2f7c2ddfec2.jpg" />
             <div class="category-div">

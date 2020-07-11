@@ -7,7 +7,11 @@
         style="background:#fff"
         >
             <template slot="thumb">
-                <img :src="product.imageURL" />
+                <van-image :src="product.imageURL" fit="contain" style="100px;height:100px;">
+                    <template v-slot:loading>
+                        <van-loading type="spinner" size="20" />
+                    </template>
+                </van-image>
                 <p v-if="product.imageTag!=null&&product.imageTag!=''" class="image_tag">{{product.imageTag}}</p>
             </template>
             <template slot="tags">

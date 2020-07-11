@@ -14,12 +14,13 @@ function checkConnection() {
     return states[networkState];
 }
 
-if ('_cordovaNative' in window) {
+ if ('_cordovaNative' in window) {
     CORDOVAFN = {
-        splashscreenHide() {
+        emit:CORDOVAFN.emit,
+        _splashscreenHide() {
             navigator.splashscreen.hide();
         },
-        backgroundColorByHexString(color) {
+        _backgroundColorByHexString(color) {
             let c = color ? color : "#fff";
             StatusBar.backgroundColorByHexString(c);
         },
@@ -27,30 +28,54 @@ if ('_cordovaNative' in window) {
          * 
          * @param {*} style  -- styleDefault ||styleLightContent||styleBlackTranslucent
          */
-        setStatusStyle(style = 'styleDefault', attr) {
+        _setStatusStyle(style = 'styleDefault', attr) {
             try {
-                let fun = typeof StatusBar[style];
-                if (typeof fun == 'function') {
+                let fun =  StatusBar[style];
+                if (typeof fun === 'function') {
                     fun();
                 }
             } catch (e) {
 
             }
         },
-        offlineEvent(callback) {
+        _offlineEvent(callback) {
             function onOffline() {
                 typeof callback == 'function' && callback(checkConnection());
             }
             document.removeEventListener("offline", onOffline, false);
             document.addEventListener("offline", onOffline, false);
         },
-        onlineEvent(callback) {
+        _onlineEvent(callback) {
             function onOnline() {
                 typeof callback == 'function' && callback(checkConnection());
             }
             document.removeEventListener("online", onOnline, false);
             document.addEventListener("online", onOnline, false);
+        },
+        _overlaysWebView(bool=true){
+            StatusBar.overlaysWebView(bool);
         }
     }
+ }
+CORDOVAFN.emit=function(funStr,...args){
+    if(funStr==='emit'){
+        console.warn("emit 不允许传参调用")
+    }
+    let func=CORDOVAFN['_'+funStr];
+    //alert(func)
+    try{
+        if(func&&typeof func ==='function'){
+            func(...args);
+        }
+        else{
+            console.warn(`CORDOVAFN 不存在 ${funStr} 函数`)
+        }
+    }catch(e){
+       // alert(e);
+    }
+   
 }
+/**
+ * 对外调用方式是 CORDOVAFN.emit("_onlineEvent",参数1，参数2)
+ */
 export default CORDOVAFN;
