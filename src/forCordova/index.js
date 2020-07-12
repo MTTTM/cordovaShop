@@ -70,12 +70,12 @@ function checkConnection() {
         _init(fn){
             document.addEventListener('deviceready',fn, false);
         },
-        _initStatusBar(meta={}){
+        _initStatusBar(meta={},reset=false){
             try{
                 let statusBar=meta.statusBar?meta.statusBar:{};
                 const {statusBarColor}=statusBar;
                 let statusBarColorLocal=localStorage.getItem("$corodva_statusBarColor");
-                if(String(statusBarColor)==String(statusBarColorLocal)){
+                if(String(statusBarColor)==String(statusBarColorLocal)&&!reset){
                     return;
                 }
                 localStorage.setItem("$corodva_statusBarColor",String(statusBarColor))
@@ -83,7 +83,7 @@ function checkConnection() {
                 CORDOVAFN.emit("overlaysWebView",true);// 是否覆盖webview,如果覆盖需要做相应的样式处理
                 CORDOVAFN.emit("backgroundColorByHexString",statusBarColor);//设置背景
                 CORDOVAFN.emit("setStatusStyle");//设置字体
-               // StatusBar.show();
+                StatusBar.show();
             }catch(e){
                 alert(e)
             }

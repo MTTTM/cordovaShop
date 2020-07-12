@@ -15,7 +15,10 @@ const routes = [
     },
     meta: {
       title: '首页',
-        keep: true
+        keep: true,
+        statusBar:{
+          statusBarColor:"#fff"
+        }
     }
   },
   {
@@ -256,14 +259,6 @@ beforeEachFunc();
 //cordova初始化抽重写路由的beforeEach
 CORDOVACONFIG.emit("init", () => {
     beforeEachFunc((to, from, next)=>{
-      
-        // let statusBar=to.meta.statusBar?to.meta.statusBar:{};
-        // const {statusBarColor}=statusBar;
-        // //设置背景颜色
-        // CORDOVACONFIG.emit("overlaysWebView",true);// 是否覆盖webview,如果覆盖需要做相应的样式处理
-        // CORDOVACONFIG.emit("backgroundColorByHexString",statusBarColor);//设置背景
-        // CORDOVACONFIG.emit("setStatusStyle");//设置字体
-        // alert(to.meta.statusBar.statusBarColor)
         CORDOVACONFIG.emit("initStatusBar",to.meta);
 
     });

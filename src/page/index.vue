@@ -17,7 +17,9 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.$cordovaFn.emit("init", () => {
+      
         this.$cordovaFn.emit("splashscreenHide");
+          this.$cordovaFn.emit("initStatusBar",this.$route.meta,true);
         this.$cordovaFn.emit("offlineEvent", () => {
           this.$notify({ type: "warning", message: "网络连接失败" });
         });
