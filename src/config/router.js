@@ -16,9 +16,6 @@ const routes = [
     meta: {
       title: '首页',
         keep: true,
-        statusBar:{
-          statusBarColor:"#fff"
-        }
     }
   },
   {
@@ -260,7 +257,6 @@ beforeEachFunc();
 CORDOVACONFIG.emit("init", () => {
     beforeEachFunc((to, from, next)=>{
         CORDOVACONFIG.emit("initStatusBar",to.meta);
-
     });
 });
 
