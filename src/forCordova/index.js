@@ -14,7 +14,7 @@ function checkConnection() {
     return states[networkState];
 }
 
- if ('_cordovaNative' in window) {
+  if ('_cordovaNative' in window) {
     CORDOVAFN = {
         emit:CORDOVAFN.emit,
         _splashscreenHide() {
@@ -54,6 +54,12 @@ function checkConnection() {
         },
         _overlaysWebView(bool=true){
             StatusBar.overlaysWebView(bool);
+        },
+        //获取软件版本号
+        _getVersionNumber(callback){
+            cordova.getAppVersion.getVersionNumber(v=>{
+                typeof callback == 'function' && callback(v);
+            })
         }
     }
  }
@@ -67,7 +73,7 @@ CORDOVAFN.emit=function(funStr,...args){
             func(...args);
         }
         else if('_cordovaNative' in window){
-           alert(`CORDOVAFN 不存在 ${funStr} 函数`)
+           alert(`CORDOVAFN 不存在 _${funStr} 函数`)
         }
     }catch(e){
        alert(e);

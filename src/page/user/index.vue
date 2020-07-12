@@ -76,6 +76,7 @@
 
     <van-cell-group>
       <van-cell title="切换账号" is-link to="/login" />
+       <van-cell :title="'软件版本:'+version" v-if="version"/>
     </van-cell-group>
     <navigate />
   </div>
@@ -87,7 +88,9 @@ import { GetUserIndex } from "../../api/user.js";
 export default {
   data(){
     return{
-      data:{}
+      data:{
+        version:""
+      }
     }
   },
   components: {
@@ -96,6 +99,9 @@ export default {
       GetUserIndex().then(response=>{
           this.data=response;
       });
+       this.$cordovaFn.emit("getVersionNumber",(v)=>{
+         this.version=v;
+       });
   },
 };
 </script>
