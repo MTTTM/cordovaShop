@@ -224,25 +224,49 @@ const router = new Router({
   }
 });
 
-router.beforeEach((to, from, next) => {
-  const title = to.meta && to.meta.title;
-  if (title) {
-    document.title = title;
-  }
-  try{
-    let statusBar=to.meta.statusBar?to.meta.statusBar:{};
-    const {statusBarColor}=statusBar;
-    //设置背景颜色
-   
-    CORDOVACONFIG.emit("overlaysWebView",true);// 是否覆盖webview,如果覆盖需要做相应的样式处理
-    CORDOVACONFIG.emit("backgroundColorByHexString",statusBarColor);//设置背景
-    CORDOVACONFIG.emit("setStatusStyle");//设置字体
-  }catch(e){
-    alert(JSON.stringify(e))
-  }
-   
-  
-  next();
+// router.beforeEach((to, from, next) => {
+//   const title = to.meta && to.meta.title;
+//   if (title) {
+//     document.title = title;
+//   }
+//   try{
+//     let statusBar=to.meta.statusBar?to.meta.statusBar:{};
+//     const {statusBarColor}=statusBar;
+//     //设置背景颜色
+//     this.$cordovaFn.emit("init", () => {});
+//     CORDOVACONFIG.emit("overlaysWebView",true);// 是否覆盖webview,如果覆盖需要做相应的样式处理
+//     CORDOVACONFIG.emit("backgroundColorByHexString",statusBarColor);//设置背景
+//     CORDOVACONFIG.emit("setStatusStyle");//设置字体
+//   }catch(e){
+//     alert(JSON.stringify(e))
+//   }
+//   next();
+// });
+function beforeEachFunc(fn){
+  router.beforeEach((to, from, next) => {
+    const title = to.meta && to.meta.title;
+    if (title) {
+      document.title = title;
+    }
+     typeof fn==='function'&&fn(to, from, next);
+    next();
+  });
+}
+beforeEachFunc();
+//cordova初始化抽重写路由的beforeEach
+CORDOVACONFIG.emit("init", () => {
+    beforeEachFunc((to, from, next)=>{
+      
+        // let statusBar=to.meta.statusBar?to.meta.statusBar:{};
+        // const {statusBarColor}=statusBar;
+        // //设置背景颜色
+        // CORDOVACONFIG.emit("overlaysWebView",true);// 是否覆盖webview,如果覆盖需要做相应的样式处理
+        // CORDOVACONFIG.emit("backgroundColorByHexString",statusBarColor);//设置背景
+        // CORDOVACONFIG.emit("setStatusStyle");//设置字体
+        // alert(to.meta.statusBar.statusBarColor)
+        CORDOVACONFIG.emit("initStatusBar",to.meta);
+
+    });
 });
 
 export {

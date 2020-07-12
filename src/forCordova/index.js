@@ -60,6 +60,34 @@ function checkConnection() {
             cordova.getAppVersion.getVersionNumber(v=>{
                 typeof callback == 'function' && callback(v);
             })
+        },
+        addEventListener(event,fn){
+            document.addEventListener(event, fn, false);
+        },
+        removeEventListener(event,fn){
+            document.removeEventListener(event, fn, false);
+        },
+        _init(fn){
+            document.addEventListener('deviceready',fn, false);
+        },
+        _initStatusBar(meta={}){
+            try{
+                let statusBar=meta.statusBar?meta.statusBar:{};
+                const {statusBarColor}=statusBar;
+                let statusBarColorLocal=localStorage.getItem("$corodva_statusBarColor");
+                if(String(statusBarColor)==String(statusBarColorLocal)){
+                    return;
+                }
+                localStorage.setItem("$corodva_statusBarColor",String(statusBarColor))
+                //设置背景颜色
+                CORDOVAFN.emit("overlaysWebView",true);// 是否覆盖webview,如果覆盖需要做相应的样式处理
+                CORDOVAFN.emit("backgroundColorByHexString",statusBarColor);//设置背景
+                CORDOVAFN.emit("setStatusStyle");//设置字体
+               // StatusBar.show();
+            }catch(e){
+                alert(e)
+            }
+            
         }
     }
  }

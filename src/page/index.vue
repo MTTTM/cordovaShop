@@ -16,6 +16,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
+      this.$cordovaFn.emit("init", () => {
         this.$cordovaFn.emit("splashscreenHide");
         this.$cordovaFn.emit("offlineEvent", () => {
           this.$notify({ type: "warning", message: "网络连接失败" });
@@ -23,7 +24,7 @@ export default {
         this.$cordovaFn.emit("onlineEvent", () => {
           this.$notify({ type: "success", message: "网络连接成功" });
         });
-
+      });
     });
   }
 };

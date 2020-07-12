@@ -19,6 +19,11 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="AutoHideSplashScreen" value="false" />
+    //状态栏不占位
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarDefaultScrollToTop" value="false" />
+    //状态栏背景透明
+    <!-- <preference name="StatusBarBackgroundColor"  /> -->
     <platform name="android">
         <allow-intent href="market:*" />
         <splash src="res/screen/android/screen.png" density="port-hdpi"/>
