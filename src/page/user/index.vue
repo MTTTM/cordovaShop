@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="user-profile">
+    <div class="user-profile" :style="{'padding-top':height}">
       <div class="user-profile-avatar">
         <a href="/#/user/info">
           <img :src="data.Avatar" alt="用户头像">
@@ -88,13 +88,22 @@ import { GetUserIndex } from "../../api/user.js";
 export default {
   data(){
     return{
-      data:{
-        version:""
-      }
+      data:{},
+      version:""
     }
   },
   components: {
   },
+  computed:{
+        height(){
+            // let p=parseInt(this.plus);
+            // if(isNaN(Number(p))){
+            //     p=0;
+            // }
+            let t=(this.$store.state.cvd.statusHeight)+"px";
+            return t;
+        }
+    },
   created:function(){
       GetUserIndex().then(response=>{
           this.data=response;

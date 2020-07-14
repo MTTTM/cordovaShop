@@ -38,6 +38,19 @@ function checkConnection() {
 
             }
         },
+        _getStatusbarHeight(fun) {
+            cordova.plugins.StatusBarHeight.getValue(
+                function(value) {
+                    var pdr = window.devicePixelRatio; // 获取设备独立像素比
+                   // var px = value * pdr; // 得到物理像素值
+                   typeof fun==='function'&&fun(value);
+                },
+                function(error) {
+                    typeof fun==='function'&&fun(0);
+                    console.log(error);
+                }
+            )
+        },
         _offlineEvent(callback) {
             function onOffline() {
                 typeof callback == 'function' && callback(checkConnection());

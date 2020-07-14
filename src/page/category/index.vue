@@ -1,5 +1,6 @@
 <template>
     <div>
+       <statuBar/>
         <van-search
         v-model="value"
         placeholder="请输入搜索关键词"

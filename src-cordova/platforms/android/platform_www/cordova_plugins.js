@@ -40,6 +40,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.getAppVersion"
       ]
+    },
+    {
+      "id": "cordova-plugin-statusbar-height.StatusBarHeight",
+      "file": "plugins/cordova-plugin-statusbar-height/www/StatusBarHeight.js",
+      "pluginId": "cordova-plugin-statusbar-height",
+      "clobbers": [
+        "cordova.plugins.StatusBarHeight"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -47,6 +55,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-splashscreen": "5.0.4",
     "cordova-plugin-network-information": "2.0.2",
     "cordova-plugin-statusbar": "2.4.3",
-    "cordova-plugin-app-version": "0.1.9"
+    "cordova-plugin-app-version": "0.1.9",
+    "cordova-plugin-statusbar-height": "1.0.0"
   };
 });

@@ -1,6 +1,8 @@
 <template>
     <div class="search-box" :style="boxstyle" >
+    <statuBar/>
     <div class="search-box__view" :style="boxviewstyle">
+        
         <div class="search">
             <div :class="'search__filed search__filed--'+data.textalign+' search__filed--'+(data.boxtype=='2'?'circle':'rect')" :style="'background-color:'+(data.boxcolor==undefined?'#ffffff':data.boxcolor)+';'">
                 <van-icon name="search" class="icon-search" size="14px" :color="data.color" />

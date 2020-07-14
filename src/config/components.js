@@ -3,6 +3,7 @@ import headerNav from '../components/header/nav';
 
 import navigate from '../components/footer/navigate.vue'
 import productcard from '../components/common/productcard.vue'
+import statuBar from "../components/statuBar/index.vue"
 import {
   Tag,
   Col,
@@ -12,13 +13,8 @@ import {
   Swipe,
   Toast,
   SwipeItem,
-//   GoodsAction,
-//   GoodsActionBigBtn,
-//   GoodsActionMiniBtn,
+  GoodsAction, GoodsActionIcon, GoodsActionButton,
 Sidebar, SidebarItem,
-GoodsAction, 
-GoodsActionIcon,
- GoodsActionButton,
   ActionSheet,
   Sku,
   Card,
@@ -65,11 +61,12 @@ const components=[
     // GoodsAction,
     // GoodsActionBigBtn,
     // GoodsActionMiniBtn,
+    GoodsAction,
+     GoodsActionIcon,
+      GoodsActionButton,
     VanImage,
     
-    GoodsAction, 
-GoodsActionIcon,
- GoodsActionButton,
+
     ActionSheet,
     Sku,
     Card,
@@ -80,7 +77,8 @@ GoodsActionIcon,
     headerNav, 
     Tab, Tabs,Toast,Row,Checkbox, CheckboxGroup, SubmitBar,NavBar ,Tabbar,
      TabbarItem,navigate,Panel,List ,Step, Steps,Field ,
-    Popup,productcard,Stepper,RadioGroup, Radio,Picker,Uploader,Info,Notify,Loading
+    Popup,productcard,Stepper,RadioGroup, Radio,Picker,Uploader,Info,Notify,Loading,
+    statuBar
 ]
 
 

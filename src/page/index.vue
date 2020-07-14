@@ -15,6 +15,9 @@ export default {
     navigate
   },
   mounted() {
+     this.$cordovaFn.emit("getStatusbarHeight",h=>{
+           this.$store.commit("cvd/updateStatusHeight",30);
+        })
     this.$nextTick(() => {
       this.$cordovaFn.emit("init", () => {
       
@@ -26,6 +29,9 @@ export default {
         this.$cordovaFn.emit("onlineEvent", () => {
           this.$notify({ type: "success", message: "网络连接成功" });
         });
+        this.$cordovaFn.emit("getStatusbarHeight",h=>{
+           this.$store.commit("cvd/updateStatusHeight",h);
+        })
       });
     });
   }

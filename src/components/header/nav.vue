@@ -6,13 +6,15 @@
       left-arrow
       @click-left="onBack"
       fixed
-      style="z-index:200"
+      z-index="200"
+      :style="{paddingTop:statusHeight}"
     />
     <van-nav-bar
       :title="title"
       left-text
       left-arrow
-      style="z-index:10"
+      z-index="190"
+      :style="{paddingTop:statusHeight}"
     />
   </div>
 </template>
@@ -26,6 +28,12 @@ export default {
   },
   props: {
     title: String
+  },
+  computed:{
+    statusHeight(){
+        return this.$store.state.cvd.statusHeight+"px";
+    }
+    
   },
   methods: {
     onBack() {

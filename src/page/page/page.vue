@@ -2,6 +2,7 @@
   <div
     :style="'background-color:'+((page.BackgroundColor==undefined||page.BackgroundColor=='')?'#fff':page.BackgroundColor)"
   >
+    <statuBar :plus="topheight"/>
     <div :style="'height:'+topheight+'px'"></div>
 
     <div v-for="(item,index) in page.Sections" :key="index">

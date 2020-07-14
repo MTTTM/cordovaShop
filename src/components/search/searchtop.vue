@@ -1,8 +1,10 @@
 <template>
     <div>
+        
         <van-nav-bar left-arrow class="product-serach"
         @click-left="onBack"
         >
+            <statuBar style="background:blue;" />
             <van-search
             v-model="value"
             placeholder="请输入搜索关键词"

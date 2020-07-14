@@ -78,5 +78,8 @@ export default {
 .fade-in-enter, .fade-out-active{
      opacity: 0 
 }
+.van-nav-bar__left, .van-nav-bar__right{
+  height: 100%;;
+}
 </style>
 

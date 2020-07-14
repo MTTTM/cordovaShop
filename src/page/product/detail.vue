@@ -70,18 +70,14 @@
     </div>
     <van-goods-action>
         
-      <van-goods-action-mini-btn icon="like-o" @click="sorry">
+      <van-goods-action-icon icon="like-o" @click="sorry">
         收藏
-      </van-goods-action-mini-btn>
-      <van-goods-action-mini-btn icon="cart" @click="onClickCart">
+      </van-goods-action-icon>
+      <van-goods-action-icon icon="cart" @click="onClickCart">
         购物车
-      </van-goods-action-mini-btn>
-      <van-goods-action-big-btn @click="showSku">
-        加入购物车
-      </van-goods-action-big-btn>
-      <van-goods-action-big-btn primary @click="showSku">
-        立即购买
-      </van-goods-action-big-btn>
+      </van-goods-action-icon>
+      <van-goods-action-button type="warning" text="加入购物车"  @click="showSku"/>
+      <van-goods-action-button type="danger" text="立即购买" @click="showSku"/>
     </van-goods-action>
     <van-actionsheet v-model="show" title="促销" style="font-size:14px;">
         
