@@ -83,7 +83,6 @@ function checkConnection() {
                 CORDOVAFN.emit("overlaysWebView",true);// 是否覆盖webview,如果覆盖需要做相应的样式处理
                 CORDOVAFN.emit("backgroundColorByHexString",statusBarColor);//设置背景
                 CORDOVAFN.emit("setStatusStyle");//设置字体
-                StatusBar.show();
             }catch(e){
                 alert(e)
             }
