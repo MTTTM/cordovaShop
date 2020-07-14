@@ -48,6 +48,6 @@
     <icon background="res/icon/android/ic_launcher_background.png" density="xxxhdpi" foreground="res/icon/android/icon.png" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="AutoHideSplashScreen" value="false" />
-    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarDefaultScrollToTop" value="false" />
 </widget>
