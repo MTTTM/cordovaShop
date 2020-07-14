@@ -18,6 +18,9 @@
     <feature name="AppVersion">
         <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion" />
     </feature>
+    <feature name="StatusBarHeight">
+        <param name="android-package" value="org.apache.cordova.statusbarheight.StatusBarHeight" />
+    </feature>
     <name>VueExampleAppName</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -26,8 +29,8 @@
         Apache Cordova Team
     </author>
     <hook src="../node_modules/vue-cli-plugin-cordova/serve-config-hook.js" type="after_prepare" />
-    <content src="https://192.168.0.15:8080" />
-    <allow-navigation href="https://192.168.0.15:8080" />
+    <content src="https://192.168.0.16:8080" />
+    <allow-navigation href="https://192.168.0.16:8080" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
