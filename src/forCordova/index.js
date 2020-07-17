@@ -51,6 +51,9 @@ function checkConnection() {
                 }
             )
         },
+        _checkConnection(){
+            return checkConnection();
+        },
         _offlineEvent(callback) {
             function onOffline() {
                 typeof callback == 'function' && callback(checkConnection());
@@ -84,6 +87,7 @@ function checkConnection() {
             document.addEventListener('deviceready',fn, false);
         },
         _initStatusBar(meta={},reset=false){
+            //使用了沉浸式后不再需要切换
             try{
                 let statusBar=meta.statusBar?meta.statusBar:{};
                 const {statusBarColor}=statusBar;
@@ -91,7 +95,7 @@ function checkConnection() {
                 if(String(statusBarColor)==String(statusBarColorLocal)&&!reset){
                     return;
                 }
-                localStorage.setItem("$corodva_statusBarColor",String(statusBarColor))
+            localStorage.setItem("$corodva_statusBarColor",String(statusBarColor))
                 //设置背景颜色
                 CORDOVAFN.emit("overlaysWebView",true);// 是否覆盖webview,如果覆盖需要做相应的样式处理
                 CORDOVAFN.emit("backgroundColorByHexString",statusBarColor);//设置背景

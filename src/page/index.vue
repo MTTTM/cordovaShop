@@ -23,10 +23,14 @@ export default {
       
         this.$cordovaFn.emit("splashscreenHide");
           this.$cordovaFn.emit("initStatusBar",this.$route.meta,true);
-        this.$cordovaFn.emit("offlineEvent", () => {
-          this.$notify({ type: "warning", message: "网络连接失败" });
+          let _checkConnection=this.$cordovaFn.emit("checkConnection");
+        this.$cordovaFn.emit("offlineEvent", (netWork) => {
+         if(_checkConnection!='No network connection'){
+           this.$notify({ type: "warning", message: "网络连接失败" });
+         }
         });
-        this.$cordovaFn.emit("onlineEvent", () => {
+        this.$cordovaFn.emit("onlineEvent", (s) => {
+          _checkConnection=this.$cordovaFn.emit("checkConnection");
           this.$notify({ type: "success", message: "网络连接成功" });
         });
         this.$cordovaFn.emit("getStatusbarHeight",h=>{
