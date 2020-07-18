@@ -48,6 +48,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.plugins.StatusBarHeight"
       ]
+    },
+    {
+      "id": "cordova-plugin-fullscreen.AndroidFullScreen",
+      "file": "plugins/cordova-plugin-fullscreen/www/AndroidFullScreen.js",
+      "pluginId": "cordova-plugin-fullscreen",
+      "clobbers": [
+        "AndroidFullScreen"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -56,6 +64,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-network-information": "2.0.2",
     "cordova-plugin-statusbar": "2.4.3",
     "cordova-plugin-app-version": "0.1.9",
-    "cordova-plugin-statusbar-height": "1.0.0"
+    "cordova-plugin-statusbar-height": "1.0.0",
+    "cordova-plugin-fullscreen": "1.1.0"
   };
 });

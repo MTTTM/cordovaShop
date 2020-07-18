@@ -7,6 +7,7 @@
       @click-left="onBack"
       fixed
       z-index="200"
+      class="cm-header"
       :style="{paddingTop:statusHeight}"
     />
     <van-nav-bar
@@ -14,6 +15,7 @@
       left-text
       left-arrow
       z-index="190"
+      class="cm-header"
       :style="{paddingTop:statusHeight}"
     />
   </div>
@@ -43,5 +45,18 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less">
+.cm-header{
+ display: flex;
+ .van-nav-bar__left{
+   position: relative;
+ }
+ .van-nav-bar__title{
+   position: relative;
+   flex:1 0 auto;
+ }
+ .van-nav-bar__right{
+   position: relative;
+ }
+}
 </style>

@@ -15,27 +15,37 @@ export default {
     navigate
   },
   mounted() {
-     this.$cordovaFn.emit("getStatusbarHeight",h=>{
-           this.$store.commit("cvd/updateStatusHeight",30);
-        })
+    this.$cordovaFn.emit("getStatusbarHeight", h => {
+      this.$store.commit("cvd/updateStatusHeight", 30);
+    });
     this.$nextTick(() => {
       this.$cordovaFn.emit("init", () => {
-      
         this.$cordovaFn.emit("splashscreenHide");
-          this.$cordovaFn.emit("initStatusBar",this.$route.meta,true);
-          let _checkConnection=this.$cordovaFn.emit("checkConnection");
-        this.$cordovaFn.emit("offlineEvent", (netWork) => {
-         if(_checkConnection!='No network connection'){
-           this.$notify({ type: "warning", message: "网络连接失败" });
-         }
+        
+        let _checkConnection = this.$cordovaFn.emit("checkConnection");
+        this.$cordovaFn.emit("offlineEvent", netWork => {
+          if (_checkConnection != "No network connection") {
+            this.$notify({ type: "warning", message: "网络连接失败" });
+          }
         });
-        this.$cordovaFn.emit("onlineEvent", (s) => {
-          _checkConnection=this.$cordovaFn.emit("checkConnection");
+        this.$cordovaFn.emit("onlineEvent", s => {
+          _checkConnection = this.$cordovaFn.emit("checkConnection");
           this.$notify({ type: "success", message: "网络连接成功" });
         });
-        this.$cordovaFn.emit("getStatusbarHeight",h=>{
-           this.$store.commit("cvd/updateStatusHeight",h);
-        })
+        this.$cordovaFn.emit("getStatusbarHeight", h => {
+          this.$store.commit("cvd/updateStatusHeight", h);
+        });
+
+        AndroidFullScreen.showUnderStatusBar(()=>{
+          
+        }, ()=>{
+          
+        });
+        AndroidFullScreen.showUnderSystemUI(()=>{}, ()=>{});
+        this.$cordovaFn.emit("initStatusBar", this.$route.meta, true);
+        //this.$cordovaFn.emit("backgroundColorByHexString");
+
+       // AndroidFullScreen.immersiveMode(()=>{}, ()=>{});
       });
     });
   }

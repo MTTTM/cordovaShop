@@ -20,7 +20,7 @@ function checkConnection() {
         _splashscreenHide() {
             navigator.splashscreen.hide();
         },
-        _backgroundColorByHexString(color) {
+        _backgroundColorByHexString(color='#ffffffff') {
             let c = color ? color : "#fff";
             StatusBar.backgroundColorByHexString(c);
         },

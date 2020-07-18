@@ -31,6 +31,10 @@
             {
               "xml": "<feature name=\"StatusBarHeight\"><param name=\"android-package\" value=\"org.apache.cordova.statusbarheight.StatusBarHeight\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"AndroidFullScreen\"><param name=\"android-package\" value=\"com.mesmotronic.plugins.FullScreenPlugin\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -64,6 +68,9 @@
       "PACKAGE_NAME": "com.vue.example.app"
     },
     "cordova-plugin-statusbar-height": {
+      "PACKAGE_NAME": "com.vue.example.app"
+    },
+    "cordova-plugin-fullscreen": {
       "PACKAGE_NAME": "com.vue.example.app"
     }
   },
@@ -117,6 +124,14 @@
       "clobbers": [
         "cordova.plugins.StatusBarHeight"
       ]
+    },
+    {
+      "id": "cordova-plugin-fullscreen.AndroidFullScreen",
+      "file": "plugins/cordova-plugin-fullscreen/www/AndroidFullScreen.js",
+      "pluginId": "cordova-plugin-fullscreen",
+      "clobbers": [
+        "AndroidFullScreen"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -125,6 +140,7 @@
     "cordova-plugin-network-information": "2.0.2",
     "cordova-plugin-statusbar": "2.4.3",
     "cordova-plugin-app-version": "0.1.9",
-    "cordova-plugin-statusbar-height": "1.0.0"
+    "cordova-plugin-statusbar-height": "1.0.0",
+    "cordova-plugin-fullscreen": "1.1.0"
   }
 }
