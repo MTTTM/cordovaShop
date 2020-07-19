@@ -27,7 +27,6 @@ export default {
     $route(to, from) {
       const toDepth = to.path.split("/").length;
       const fromDepth = from.path.split("/").length;
-      console.log("to", to, from, toDepth);
       let path = ["home", "category", "cart", "user"];
       let toIndex = path.indexOf(to.name);
       let fromIndex = path.indexOf(from.name);

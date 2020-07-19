@@ -19,7 +19,9 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.$cordovaFn.emit("init", () => {
-        this.$cordovaFn.emit("splashscreenHide");
+        setTimeout(()=>{
+          this.$cordovaFn.emit("splashscreenHide");
+        },1000)
         //获取状态蓝高度
         this.$cordovaFn.emit("getStatusbarHeight", h => {
           this.$store.commit("cvd/updateStatusHeight", h);
