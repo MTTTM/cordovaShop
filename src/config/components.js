@@ -79,6 +79,7 @@ const components = [
 
 export default (Vue) => {
   Vue.use(Notify);
+  Vue.use(ActionSheet);
   components.forEach(Component => {
     Vue.component(Component.name, Component)
   });

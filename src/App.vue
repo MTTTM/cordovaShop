@@ -42,6 +42,10 @@ export default {
 };
 </script>
 <style lang="css">
+#app{
+  width: 100vw;
+  overflow-x: hidden;
+}
 .slide-right-enter-active,
 .slide-right-leave-active,
 .slide-left-enter-active,
@@ -52,7 +56,7 @@ export default {
   left: 0;
   top: 0;
   z-index: 10;
-  width: 100vw;
+  width: 100%;
   transition-timing-function: linear
 }
 .slide-right-enter {

@@ -79,7 +79,7 @@
       <van-goods-action-button type="warning" text="加入购物车"  @click="showSku"/>
       <van-goods-action-button type="danger" text="立即购买" @click="showSku"/>
     </van-goods-action>
-    <van-actionsheet v-model="show" title="促销" style="font-size:14px;">
+    <van-action-sheet v-model="show" title="促销" style="font-size:14px;">
         
             <van-cell  is-link @click="sorry" >
                 <template slot="title">
@@ -99,9 +99,9 @@
                     <span> 购买不超过5件时享受单件价￥8.00，超出数量以结算价为准</span>
                 </template>
             </van-cell>
-    </van-actionsheet>
+    </van-action-sheet>
     
-    <van-actionsheet v-model="showTag" title="服务说明" style="font-size:14px;">
+    <van-action-sheet v-model="showTag" title="服务说明" style="font-size:14px;">
         
             <van-cell>
                 <template slot="title">
@@ -138,7 +138,7 @@
                     <div style="margin-left: 24px;font-size:10px;color:#7d7d7d;">本商品由前海保税仓发货</div>
                 </template>
             </van-cell>
-    </van-actionsheet>
+    </van-action-sheet>
     <van-sku
           v-model="showBase"
           :sku="skuData.sku"
