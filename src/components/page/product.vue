@@ -8,6 +8,7 @@
             <router-link :class="'cap-goods-list__item cap-goods-list__item--'+data.classname+' '+data.ParameterDictionary.showtype+' '+data.aclass" :to="'/product/'+item.id">
                 <div class="cap-goods-list__photo">
                     <img class="cap-goods-list__img lazy lazyload"
+                    style="height:169px;"
                      v-lazy="item.imageURL+'?w='+((data.ParameterDictionary.type=='1'||data.ParameterDictionary.type=='3')?'750':'375')" />
                 </div>
                 <div :class="'cap-goods-list__info has-title has-price '+(data.ParameterDictionary.showtype == 'card'?'has-btn':'')">

@@ -1,14 +1,12 @@
 <template>
   <div id="app">
-    <transition :name="transitionName">
+   
       <keep-alive v-if="$route.meta.keep">
         <router-view />
       </keep-alive>
       <template v-else>
         <router-view />
       </template>
-    </transition>
-
     <router-view name="tabBar"></router-view>
   </div>
 </template>
