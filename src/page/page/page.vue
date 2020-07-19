@@ -41,6 +41,7 @@
         <product v-if="item.Code=='Product'" :data="item"></product>
       </transition>
     </div>
+    <div style="height:60px;"></div>
   </div>
 </template>
 <script>
