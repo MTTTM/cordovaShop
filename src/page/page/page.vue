@@ -2,8 +2,8 @@
   <div
     :style="'background-color:'+((page.BackgroundColor==undefined||page.BackgroundColor=='')?'#fff':page.BackgroundColor)"
   >
-    <statuBar :plus="topheight"/>
-    <div :style="'height:'+topheight+'px'"></div>
+    <statuBar :plus="50"/>
+    <div style="height:50px"></div>
 
     <div v-for="(item,index) in page.Sections" :key="index">
       <transition name="fade">

@@ -74,17 +74,9 @@
         </div>
     </van-checkbox-group>
     
-    <div style="height:50px;"></div>
-    <van-submit-bar
-      :price="totalPrice"
-      :disabled="!checkedGoods.length"
-      :button-text="submitBarText"
-      @submit="onSubmit"
-    >
-    <template slot>
-      <van-checkbox v-model="checkedAll" >全选</van-checkbox>
-    </template>
-    </van-submit-bar>
+    <div style="height:100px;"></div>
+    <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit" style="bottom:49px"/>
+    <van-checkbox v-model="checkedAll">全选</van-checkbox>
   </div>
 </template>
 

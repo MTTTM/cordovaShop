@@ -176,7 +176,10 @@ const routes = [
   },
   {
     name: 'cart',
-    component: () => import('../page/cart/index'),
+    components:{
+      default:() => import('../page/cart/index'),
+      tabBar: navigate,
+    },
     meta: {
       title: '购物车',
       keep: true
@@ -230,6 +233,12 @@ function beforeEachFunc(fn){
       document.title = title;
     }
      typeof fn==='function'&&fn(to, from, next);
+    //  try{
+    //    if(to.name!=='home'){
+    //     document.querySelector("#app").scrollTop=0;
+    //    }
+     
+    //  }catch(e){}
     next();
   });
 }

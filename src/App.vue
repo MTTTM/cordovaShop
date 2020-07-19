@@ -42,9 +42,8 @@ export default {
 };
 </script>
 <style lang="css">
-#app{
-  width: 100vw;
-  overflow-x: hidden;
+img{
+  max-width: 100%;
 }
 .slide-right-enter-active,
 .slide-right-leave-active,
@@ -56,7 +55,8 @@ export default {
   left: 0;
   top: 0;
   z-index: 10;
-  width: 100%;
+  width: 100vh;
+  height: 100vh;
   transition-timing-function: linear
 }
 .slide-right-enter {
@@ -77,7 +77,7 @@ export default {
 }
 
 .fade-in-active, .fade-out-active{
-    transition: all 1s linear 
+    transition: all .6s  linear;
 } 
 .fade-in-enter, .fade-out-active{
      opacity: 0 
