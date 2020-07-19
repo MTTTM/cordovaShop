@@ -20,6 +20,9 @@
 package com.vue.example.app;
 
 import android.os.Bundle;
+
+import com.gyf.immersionbar.ImmersionBar;
+
 import org.apache.cordova.*;
 
 public class MainActivity extends CordovaActivity
@@ -34,7 +37,10 @@ public class MainActivity extends CordovaActivity
         if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
             moveTaskToBack(true);
         }
-
+        ImmersionBar.with(this)
+                .transparentStatusBar()
+                .statusBarDarkFont(true)
+                .init();
         // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
     }

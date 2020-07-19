@@ -14,78 +14,72 @@ import {
   Toast,
   SwipeItem,
   GoodsAction, GoodsActionIcon, GoodsActionButton,
-Sidebar, SidebarItem,
+  Sidebar, SidebarItem,
   ActionSheet,
   Sku,
   Card,
   Button,
   SwipeCell,
   Dialog,
-  Tab, 
+  Tab,
   Tabs,
   Row,
-  Checkbox, 
-  CheckboxGroup, 
+  Checkbox,
+  CheckboxGroup,
   SubmitBar,
   NavBar,
-  Tabbar, 
+  Tabbar,
   TabbarItem,
   Panel,
   List,
-  Step, 
+  Step,
   Steps,
-  Field ,
+  Field,
   Popup,
   Stepper,
   RadioGroup,
-   Radio,
-   Picker,
-   Uploader,
-   Info,
-   Image as VanImage,
-   Notify,
-   Loading
+  Radio,
+  Picker,
+  Uploader,
+  Info,
+  Image as VanImage,
+  Notify,
+  Loading
 } from 'vant';
+const components = [
+  Tag,
+  Col,
+  Icon,
+  Cell,
+  CellGroup,
+  Swipe,
+  SwipeItem,
+  GoodsAction,
+  GoodsActionIcon,
+  GoodsActionButton,
+  VanImage,
 
 
-// const components=[navigate,productcard,headerNav];
-
-const components=[
-    Tag,
-    Col,
-    Icon,
-    Cell,
-    CellGroup,
-    Swipe,
-    SwipeItem,
-    // GoodsAction,
-    // GoodsActionBigBtn,
-    // GoodsActionMiniBtn,
-    GoodsAction,
-     GoodsActionIcon,
-      GoodsActionButton,
-    VanImage,
-    
-
-    ActionSheet,
-    Sku,
-    Card,
-    Button,
-    SwipeCell ,
-    Sidebar, SidebarItem,
-    Dialog ,
-    headerNav, 
-    Tab, Tabs,Toast,Row,Checkbox, CheckboxGroup, SubmitBar,NavBar ,Tabbar,
-     TabbarItem,navigate,Panel,List ,Step, Steps,Field ,
-    Popup,productcard,Stepper,RadioGroup, Radio,Picker,Uploader,Info,Notify,Loading,
-    statuBar
+  ActionSheet,
+  Sku,
+  Card,
+  Button,
+  SwipeCell,
+  Sidebar, SidebarItem,
+  Dialog,
+  headerNav,
+  Tab, Tabs, Toast, Row, Checkbox, CheckboxGroup, SubmitBar, NavBar, Tabbar,
+  TabbarItem, navigate, Panel, List, Step, Steps, Field,
+  Popup, productcard, Stepper, RadioGroup, Radio, Picker, Uploader, Info, Notify, Loading,
+  statuBar
 ]
 
 
 
 
-export default (Vue)=>{
-    components.forEach(Component => {
-        Vue.component(Component.name, Component)
-    });
+export default (Vue) => {
+  Vue.use(Notify);
+  components.forEach(Component => {
+    Vue.component(Component.name, Component)
+  });
 }

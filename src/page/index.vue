@@ -1,5 +1,6 @@
 <template>
   <div>
+    <connectionNotice/>
     <page />
     <navigate />
   </div>
@@ -8,44 +9,24 @@
 <script>
 import navigate from "../components/footer/navigate.vue";
 import page from "./page/page.vue";
-
+import connectionNotice from "../forCordova/components/connectionNotice"
 export default {
   components: {
     page,
-    navigate
+    navigate,
+    connectionNotice
   },
   mounted() {
-    this.$cordovaFn.emit("getStatusbarHeight", h => {
-      this.$store.commit("cvd/updateStatusHeight", 30);
-    });
     this.$nextTick(() => {
       this.$cordovaFn.emit("init", () => {
         this.$cordovaFn.emit("splashscreenHide");
-        
-        let _checkConnection = this.$cordovaFn.emit("checkConnection");
-        this.$cordovaFn.emit("offlineEvent", netWork => {
-          if (_checkConnection != "No network connection") {
-            this.$notify({ type: "warning", message: "网络连接失败" });
-          }
-        });
-        this.$cordovaFn.emit("onlineEvent", s => {
-          _checkConnection = this.$cordovaFn.emit("checkConnection");
-          this.$notify({ type: "success", message: "网络连接成功" });
-        });
+        //获取状态蓝高度
         this.$cordovaFn.emit("getStatusbarHeight", h => {
           this.$store.commit("cvd/updateStatusHeight", h);
         });
-
-        AndroidFullScreen.showUnderStatusBar(()=>{
-          
-        }, ()=>{
-          
-        });
-        AndroidFullScreen.showUnderSystemUI(()=>{}, ()=>{});
+        //初始化状态栏
         this.$cordovaFn.emit("initStatusBar", this.$route.meta, true);
-        //this.$cordovaFn.emit("backgroundColorByHexString");
-
-       // AndroidFullScreen.immersiveMode(()=>{}, ()=>{});
+        this.$store.commit("cvd/updateInitSucc",true);//初始化成功
       });
     });
   }

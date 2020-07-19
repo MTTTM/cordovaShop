@@ -1,7 +1,8 @@
 ## 基于Vue实现开箱即用移动端商城的单页应用
 
->这是开箱即用移动端商城的框架。只需要后端返回标准接口数据，前端配置接口地址等信息，标准商城的页面不需要做任何调整。     
-
+* 这是开箱即用移动端商城的框架。只需要后端返回标准接口数据，前端配置接口地址等信息，标准商城的页面不需要做任何调整。 
+* corodva打包工具    
+* web 打包可以完全脱离corodva脚手架
 
 ## 特性
 - 开箱即用，集成后台接口格式，前端可做二次开发以实现自有业务
@@ -30,6 +31,7 @@ y9214759146@gmail.com   itisapawwword1
 - [vue-router](https://router.vuejs.org/zh/installation.html)
 - [axios](https://github.com/axios/axios)
 - [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+
 
 
 ## 快速上手
@@ -94,3 +96,11 @@ dataSources：数据源(local=本地)
 ### 状态栏
 * 方案一，状态栏占位,切换路由时候修改状态栏颜色(要求设计顶部只能有纯颜色)
 * 方案二，使用第三方插件，状态栏不占位，同时原生底部导航不占位
+
+### 坑点
+* 安卓 启动图，虚拟导航依旧还在
+* 安卓 刘海，没法实现顶上去 (可以参考这个,但是效果不如人意)[https://blog.csdn.net/qq_20663175/article/details/96427788]
+* 最后使用(mmersionBar)[https://github.com/gyf-dev/ImmersionBar] 原生的方式实现 应用沉浸式 （建议开启androidX，会报错找不到FragmentActivity类）
+* ![avatar](./doc/android/android沉浸式1.png)
+* ![avatar](./doc/android/android沉浸式2.png)
+* (androidX迁移)[https://www.jianshu.com/p/7dc111353328]

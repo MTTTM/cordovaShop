@@ -87,7 +87,7 @@ function checkConnection() {
             document.addEventListener('deviceready',fn, false);
         },
         _initStatusBar(meta={},reset=false){
-            //使用了沉浸式后不再需要切换
+            //使用了沉浸式后,状态栏的背景颜色是透明的所以还是需要更加页面的的设计修改颜色
             try{
                 let statusBar=meta.statusBar?meta.statusBar:{};
                 const {statusBarColor}=statusBar;

@@ -1,7 +1,8 @@
 const cdv= {
     namespaced: true,
     state: {
-        statusHeight: 10,
+         statusHeight: 0,//状态栏高度
+         initSucc:false,//cordova初始化成功
     },
     mutations: {
         updateStatusHeight(state, statusHeight) {
@@ -10,6 +11,9 @@ const cdv= {
                 state.statusHeight = statusHeight;
             }
             
+        },
+        updateInitSucc(state,bool=true){
+            state.initSucc=bool;
         }
     },
     actions: {
