@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Light.NoTitleBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/screen</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:fitsSystemWindows">false</item>
+        
+    </style>
+
+</resources>

@@ -1,28 +1,25 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.vue.example.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="SplashScreen">
-        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-        <param name="onload" value="true" />
+    <feature name="AppVersion">
+        <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion" />
     </feature>
     <feature name="NetworkStatus">
         <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
     </feature>
     <feature name="StatusBar">
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="AppVersion">
-        <param name="android-package" value="uk.co.whiteoctober.cordova.AppVersion" />
-    </feature>
     <feature name="StatusBarHeight">
         <param name="android-package" value="org.apache.cordova.statusbarheight.StatusBarHeight" />
     </feature>
-    <feature name="AndroidFullScreen">
-        <param name="android-package" value="com.mesmotronic.plugins.FullScreenPlugin" />
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
     </feature>
     <name>VueExampleAppName</name>
     <description>
@@ -42,10 +39,10 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
-    <splash density="port-hdpi" src="res/screen/android/screen.png" />
-    <splash density="port-ldpi" src="res/screen/android/screen.png" />
-    <splash density="port-mdpi" src="res/screen/android/screen.png" />
-    <splash density="port-xhdpi" src="res/screen/android/screen.png" />
+    <splash density="port-hdpi" src="res/screen/android/screen.jpg" />
+    <splash density="port-ldpi" src="res/screen/android/screen.jpg" />
+    <splash density="port-mdpi" src="res/screen/android/screen.jpg" />
+    <splash density="port-xhdpi" src="res/screen/android/screen.jpg" />
     <icon background="res/icon/android/ic_launcher_background.png" density="ldpi" foreground="res/icon/android/icon.png" />
     <icon background="res/icon/android/ic_launcher_background.png" density="mdpi" foreground="res/icon/android/icon.png" />
     <icon background="res/icon/android/ic_launcher_background.png" density="hdpi" foreground="res/icon/android/icon.png" />

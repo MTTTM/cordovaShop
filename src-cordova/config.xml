@@ -26,10 +26,10 @@
     <preference name="StatusBarBackgroundColor"  value="transparent"/>
     <platform name="android">
         <allow-intent href="market:*" />
-        <splash src="res/screen/android/screen.png" density="port-hdpi"/>
-        <splash src="res/screen/android/screen.png" density="port-ldpi"/>
-        <splash src="res/screen/android/screen.png" density="port-mdpi"/>
-        <splash src="res/screen/android/screen.png" density="port-xhdpi"/>
+        <splash src="res/screen/android/screen.jpg" density="port-hdpi"/>
+        <splash src="res/screen/android/screen.jpg" density="port-ldpi"/>
+        <splash src="res/screen/android/screen.jpg" density="port-mdpi"/>
+        <splash src="res/screen/android/screen.jpg" density="port-xhdpi"/>
     <icon background="res/icon/android/ic_launcher_background.png" density="ldpi" foreground="res/icon/android/icon.png" />
     <icon background="res/icon/android/ic_launcher_background.png" density="mdpi" foreground="res/icon/android/icon.png" />
     <icon background="res/icon/android/ic_launcher_background.png" density="hdpi" foreground="res/icon/android/icon.png" />

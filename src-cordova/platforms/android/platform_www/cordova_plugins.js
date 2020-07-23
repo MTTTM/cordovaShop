@@ -1,11 +1,11 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
   module.exports = [
     {
-      "id": "cordova-plugin-splashscreen.SplashScreen",
-      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-      "pluginId": "cordova-plugin-splashscreen",
+      "id": "cordova-plugin-app-version.AppVersionPlugin",
+      "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
+      "pluginId": "cordova-plugin-app-version",
       "clobbers": [
-        "navigator.splashscreen"
+        "cordova.getAppVersion"
       ]
     },
     {
@@ -34,14 +34,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-app-version.AppVersionPlugin",
-      "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
-      "pluginId": "cordova-plugin-app-version",
-      "clobbers": [
-        "cordova.getAppVersion"
-      ]
-    },
-    {
       "id": "cordova-plugin-statusbar-height.StatusBarHeight",
       "file": "plugins/cordova-plugin-statusbar-height/www/StatusBarHeight.js",
       "pluginId": "cordova-plugin-statusbar-height",
@@ -50,21 +42,20 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-fullscreen.AndroidFullScreen",
-      "file": "plugins/cordova-plugin-fullscreen/www/AndroidFullScreen.js",
-      "pluginId": "cordova-plugin-fullscreen",
+      "id": "cordova-plugin-splashscreen.SplashScreen",
+      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+      "pluginId": "cordova-plugin-splashscreen",
       "clobbers": [
-        "AndroidFullScreen"
+        "navigator.splashscreen"
       ]
     }
   ];
   module.exports.metadata = {
-    "cordova-plugin-whitelist": "1.3.4",
-    "cordova-plugin-splashscreen": "5.0.4",
-    "cordova-plugin-network-information": "2.0.2",
-    "cordova-plugin-statusbar": "2.4.3",
     "cordova-plugin-app-version": "0.1.9",
+    "cordova-plugin-network-information": "2.0.2",
+    "cordova-plugin-whitelist": "1.3.4",
+    "cordova-plugin-statusbar": "2.4.3",
     "cordova-plugin-statusbar-height": "1.0.0",
-    "cordova-plugin-fullscreen": "1.1.0"
+    "cordova-plugin-splashscreen": "6.0.0"
   };
 });
